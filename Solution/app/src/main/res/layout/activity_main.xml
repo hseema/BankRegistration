@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="registrationViewModel"
+            type="com.example.bankregistration.RegistrationViewModel" />
+    </data>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/heading"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_margin="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pan_number"
+        android:layout_margin="10dp" />
+
+    <EditText
+        android:id="@+id/editTextPan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:maxLength="10"
+        android:singleLine="true"
+        android:padding="5dp"
+        android:inputType="textCapCharacters"
+        android:background="@drawable/edittext_background"
+        android:text="@={registrationViewModel.inputPAN}" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/birthdate"
+        android:layout_margin="10dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        >
+       <EditText
+           android:id="@+id/editTextDay"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:inputType="number"
+           android:textSize="30sp"
+           android:maxLength="2"
+           android:singleLine="true"
+           android:padding="5dp"
+           android:background="@drawable/edittext_background"
+           android:layout_weight="0.25"
+           android:layout_margin="10dp"
+           android:textAlignment="center"
+           android:hint="@string/dd"
+           android:text="@={registrationViewModel.inputDay}"/>
+        <EditText
+            android:id="@+id/editTextMonth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:textSize="30sp"
+            android:maxLength="2"
+            android:singleLine="true"
+            android:padding="5dp"
+            android:background="@drawable/edittext_background"
+            android:layout_weight="0.25"
+            android:layout_margin="10dp"
+            android:textAlignment="center"
+            android:hint="@string/mm"
+            android:text="@={registrationViewModel.inputMonth}"/>
+        <EditText
+            android:id="@+id/editTextyear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:textSize="30sp"
+            android:maxLength="4"
+            android:singleLine="true"
+            android:padding="5dp"
+            android:background="@drawable/edittext_background"
+            android:layout_weight="0.25"
+            android:layout_margin="10dp"
+            android:textAlignment="center"
+            android:hint="@string/yyyy"
+            android:text="@={registrationViewModel.inputYear}"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/next"
+
+        android:layout_margin="10dp" />
+
+    <Button
+        android:id="@+id/noPanButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/no_pan"
+        android:textColor="@color/black"
+        android:background="@android:color/transparent"
+        android:layout_margin="10dp" />
+
+</LinearLayout>
+</layout>
